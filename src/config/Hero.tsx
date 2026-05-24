@@ -72,7 +72,7 @@ export const heroConfig = {
   ],
 };
 
-export const SocialLinks = [
+export const socialLinks = [
   {
     name: "X",
     href: "https://x.com/devanshpar",
