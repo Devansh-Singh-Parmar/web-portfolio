@@ -73,13 +73,65 @@ export default function CTA({
             >
               <div className="relative z-20 flex items-center gap-2 trnasition-all duration-300 group-hover:gap-8">
                 <div className="h-5 w-5 flex-shrink-0overflow-hidden rounded-full">
-                  <Image alt={profileAlt} src={profileImage} />
+                  <Image
+                    alt={profileAlt}
+                    src={profileImage}
+                    width={20}
+                    height={20}
+                    className="h-full w-full object-cover"
+                    style={{ color: "transparent" }}
+                  />
                 </div>
+                <div className="absolute left-[24px] flex -translate-x-full transform items-center gap-0 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-3 w-3"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5v14"></path>
+                  </svg>
+                  <div className="mr-2 ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-[8px] dark:bg-white/10">
+                    You
+                  </div>
+                </div>
+                <span className="relative ml-0 block text-sm font-bold whitespace-nowrap transition-all duration-300 group-hover:ml-4">
+                  {linkText}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </Container>
+      <Dialog open={showCalPopup} onOpenChange={setShowCalPopup}>
+        <DialogContent className="max-h-[90vh] max-w-[calc(100vw-2rem)] overflow-hidden sm:max-w-[calc(100vw-4rem)] md:max-w-4xl">
+          <DialogHeader>
+            <DialogTitle>Book a Meeting</DialogTitle>
+            <DialogDescription>
+              Schedule a time to connect and discuss opportunities
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="max-h-[calc(90vh-220px)] overflow-y-auto rounded-lg">
+            <Cal
+              calLink={calLink}
+              config={{
+                name: "Portfolio Visitor",
+                email: "",
+                notes: "Booked from portfolio website",
+              }}
+              className="h-[500px] w-full rounded-lg"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
