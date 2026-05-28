@@ -58,5 +58,58 @@ const ChatBubble: React.FC = () => {
   }, [messages]);
   const handleSendMessage = async () => {
     if (!newMessage.trim() || isLoading) return;
+
+    if (isMobile()) {
+      triggerHaptic("light");
+    }
+    const messageText = newMessage.trim();
+    const userMessage: Message = {
+      id: Date.now(),
+      text: messageText,
+      sender: "user",
+      timestamp: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    };
+    setMessages((prev) => [...prev, userMessage]);
+    setNewMessage("");
+    setIsLoading(true);
+
+    const botMessageId = Date.now() + 1;
+    const botMessage: Message = {
+      id: botMessageId,
+      text: "",
+      sender: "bot",
+      timestamp: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+      isStreaming: true,
+    };
+    setMessages((prev) => [...prev, botMessage]);
+    await sendMessage(messageText, botMessageId);
+  };
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    if (isMobile()) {
+      triggerHaptic("selection");
+    }
+    setNewMessage(suggestion);
+    const userMessage: Message = {
+      id: Date.now(),
+      text: suggestion,
+      sender: "user",
+      timestamp: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    };
   };
 };
