@@ -67,3 +67,59 @@ export function getAllBlogPosts(): BlogPostPreview[] {
 
   return posts;
 }
+
+export function getPublishedBlogPosts(): BlogPostPreview[] {
+  const allPosts = getAllBlogPosts();
+  return allPosts.filter((post) => post.frontmatter.isPublished);
+}
+
+export function getBlogPostsByTag(tag: string): BlogPostPreview[] {
+  const publishedPosts = getPublishedBlogPosts();
+  return publishedPosts.filter((post) =>
+    post.frontmatter.tags.some(
+      (postTag) => postTag.toLowerCase() === tag.toLowerCase(),
+    ),
+  );
+}
+
+export function getAllTags(): string[] {
+  const publishedPosts = getPublishedBlogPosts();
+  const tagsSet = new Set<string>();
+
+  publishedPosts.forEach((post) => {
+    post.frontmatter.tags.forEach((tag) => {
+      tagsSet.add(tag.toLowerCase());
+    });
+  });
+  return Array.from(tagsSet).sort();
+}
+
+export async function getRelatedPosts(
+  currentSlug: string,
+  maxPosts = 3,
+): Promise<BlogPostPreview[]> {
+  const currentPost = await getBlogPostBySlug(currentSlug);
+  if (!currentPost || !currentPost.frontmatter.isPublished) {
+    return [];
+  }
+
+  const allPosts = getPublishedBlogPosts();
+  const currentTags = currentPost.frontmatter.tags.map((tag) =>
+    tag.toLowerCase(),
+  );
+
+  const postsWithScore = allPosts
+    .filter((post) => post.slug !== currentSlug)
+    .map((post) => {
+      const sharedTags = post.frontmatter.tags.filter((tag) =>
+        currentTags.includes(tag.toLowerCase()),
+      );
+      return {
+        post,
+        score: sharedTags.length,
+      };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score);
+  return postsWithScore.slice(0, maxPosts).map((item) => item.post);
+}
