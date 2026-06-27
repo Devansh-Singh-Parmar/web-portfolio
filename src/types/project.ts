@@ -5,15 +5,14 @@ export interface Project {
   video?: string;
   link: string;
   technologies: { name: string; icon: React.ReactNode }[];
-
   github?: string;
   live: string;
   details: boolean;
-  projectsDetailsPageSlug: string;
+  projectDetailsPageSlug: string;
   isWorking: boolean;
 }
 
-export interface ProjectsCaseStudyFrontmatter {
+export interface ProjectCaseStudyFrontmatter {
   title: string;
   description: string;
   image: string;
@@ -30,13 +29,13 @@ export interface ProjectsCaseStudyFrontmatter {
   isPublished: boolean;
 }
 
-export interface ProjectsCaseStudy {
+export interface ProjectCaseStudy {
   slug: string;
-  frontmatter: ProjectsCaseStudyFrontmatter;
+  frontmatter: ProjectCaseStudyFrontmatter;
   content: string;
 }
 
-export interface ProjectsCaseStudyPreview {
+export interface ProjectCaseStudyPreview {
   slug: string;
-  frontmatter: ProjectsCaseStudyFrontmatter;
+  frontmatter: ProjectCaseStudyFrontmatter;
 }
