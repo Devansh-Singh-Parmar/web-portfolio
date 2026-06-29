@@ -90,3 +90,56 @@ export function getAllTechnologies():string[]{
     })
     return Array.from(technologiesSet).sort()
 }
+
+export function getProjectNavigation(currentSlug:string):{
+  previous:{title:string;slug:string} |null;
+  next:{title:string;slug:string}| null
+}{
+  const currentProjectIndex=projects.findIndex((project)=> project.projectDetailsPageSlug===`/project/${currentSlug}`)
+  if(currentProjectIndex===-1){
+    return{previous:null, next:null}
+  }
+  const previousProject= currentProjectIndex>0? projects[currentProjectIndex-1]:null
+  const nextProject= currentProjectIndex<projects.length - 1?projects[currentProjectIndex+1]:null
+  return {
+    previous: previousProject
+      ? {
+          title: previousProject.title,
+          slug: previousProject.projectDetailsPageSlug.replace(
+            '/projects/',
+            '',
+          ),
+        }
+      : null,
+    next: nextProject
+      ? {
+          title: nextProject.title,
+          slug: nextProject.projectDetailsPageSlug.replace('/projects/', ''),
+        }
+      : null,
+  };
+}
+
+export function getRelatedProjectCaseStudies(currentSlug:string,
+  maxProjects=2,
+):ProjectCaseStudyPreview[]{
+  const currentCaseStudy=
+  getProjectCaseStudyBySlug(currentSlug)
+  if(!currentCaseStudy || !currentCaseStudy.frontmatter.isPublished){return[]}
+
+  const allCaseStudies=getPublishedProjectCaseStudies()
+  const currentTechnologies=currentCaseStudy.frontmatter.technologies.map((tech)=>tech.toLowerCase())
+
+  const caseStudiesWithScore=allCaseStudies.filter((caseStudy)=>caseStudy.slug!== currentSlug)
+  .map((caseStudy)=>{
+    const sharedTechnologies=caseStudy.frontmatter.technologies.filter((tech)=>currentTechnologies.includes(tech.toLowerCase()))
+    return{
+      caseStudy,
+      score:sharedTechnologies.length
+    }
+  })
+  .filter((item)=>item.score>0)
+  .sort((a,b)=>b.score-a.score)
+
+  return caseStudiesWithScore.slice(0,maxProjects).map((item)=>item.caseStudy)
+}
