@@ -10,10 +10,9 @@ import NodeJs from "@/components/technologies/NodeJs";
 import PostgreSQL from "@/components/technologies/PostgreSQL";
 
 import ReactIcon from "@/components/technologies/ReactIcon";
-// Technology Components
 import TypeScript from "@/components/technologies/TypeScript";
 
-export const skillsComponents = {
+export const skillComponents = {
   TypeScript: TypeScript,
   ReactIcon: ReactIcon,
   NextJs: NextJs,
