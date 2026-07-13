@@ -37,7 +37,7 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectsDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj1",
     isWorking: true,
   },
   {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectsDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj1",
     isWorking: true,
   },
   {
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectsDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj1",
     isWorking: true,
   },
   {
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectsDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj1",
     isWorking: true,
   },
   {
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectsDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj1",
     isWorking: true,
   },
   {
@@ -152,7 +152,7 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectsDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj1",
     isWorking: true,
   },
 ];

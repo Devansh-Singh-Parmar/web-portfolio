@@ -1,9 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
 import React, { useCallback, useEffect, useState } from "react";
 
+import { useTheme } from "./ThemeProviders";
 import Moon from "../svgs/Moon";
 import Sun from "../svgs/Sun";
 import { Button } from "../ui/button";

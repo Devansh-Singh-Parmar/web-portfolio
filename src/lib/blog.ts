@@ -1,4 +1,4 @@
-import { BlogFronmatter, BlogPost, BlogPostPreview } from "@/types/blog";
+import { BlogFrontmatter, BlogPost, BlogPostPreview } from "@/types/blog";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
@@ -27,7 +27,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
-    const frontmatter = data as BlogFronmatter;
+    const frontmatter = data as BlogFrontmatter;
 
     if (!frontmatter.title || !frontmatter.description) {
       throw new Error(`Invalid Frontmatter in ${slug}.mdx`);

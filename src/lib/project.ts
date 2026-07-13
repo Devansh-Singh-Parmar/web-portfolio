@@ -109,7 +109,7 @@ export function getProjectNavigation(currentSlug: string): {
   next: { title: string; slug: string } | null;
 } {
   const currentProjectIndex = projects.findIndex(
-    (project) => project.projectDetailsPageSlug === `/project/${currentSlug}`,
+    (project) => project.projectDetailsPageSlug === `/projects/${currentSlug}`,
   );
   if (currentProjectIndex === -1) {
     return { previous: null, next: null };
