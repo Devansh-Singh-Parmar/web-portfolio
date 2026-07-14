@@ -90,7 +90,17 @@ export default function Hero() {
               )}
             >
               {IconComponent && <IconComponent />}
-              <Link href={button.href}>{button.text}</Link>
+              {button.external ? (
+                <a
+                  href={button.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {button.text}
+                </a>
+              ) : (
+                <Link href={button.href}>{button.text}</Link>
+              )}
             </Button>
           );
         })}
