@@ -9,7 +9,6 @@ import Skill from "../common/Skill";
 import CV from "../svgs/CV";
 import Chat from "../svgs/Chat";
 import { Button } from "../ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const buttonIcons = {
   CV: CV,
@@ -99,20 +98,14 @@ export default function Hero() {
 
       <div className="mt-8 flex flex-wrap gap-2">
         {socialLinks.map((link) => (
-          <Tooltip key={link.name} delayDuration={0}>
-            <TooltipTrigger asChild>
-              <Link
-                href={link.href}
-                key={link.name}
-                className="text-secondary flex items-center gap-2"
-              >
-                <span className="size-6">{link.icon}</span>
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{link.name}</p>
-            </TooltipContent>
-          </Tooltip>
+          <a
+            key={link.name}
+            href={link.href}
+            title={link.name}
+            className="text-secondary flex items-center gap-2"
+          >
+            <span className="size-6">{link.icon && <link.icon />}</span>
+          </a>
         ))}
       </div>
     </Container>

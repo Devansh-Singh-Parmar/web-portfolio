@@ -1,5 +1,5 @@
 export const ctaConfig = {
-  profileImage: "/assests/logo.jpeg",
+  profileImage: "/assets/logo.jpeg",
   profileAlt: "Profile",
 
   linkText: "Book a Free Call",

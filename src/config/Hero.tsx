@@ -26,7 +26,7 @@ export const heroConfig = {
   name: "Devansh Singh Parmar",
   occupations: ["Full Stack Developer", "XYZ HERE"],
   location: "Earth",
-  avatar: "/assests/logo.jpeg",
+  avatar: "/assets/logo.jpeg",
 
   skills: [
     {
@@ -75,20 +75,21 @@ export const socialLinks = [
   {
     name: "X",
     href: "https://x.com/devanshpar",
+    icon: X,
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/devanshsingh13/",
-    icon: <LinkedIn />,
+    icon: LinkedIn,
   },
   {
     name: "Github",
     href: "https://github.com/Devansh-Singh-Parmar",
-    icon: <Github />,
+    icon: Github,
   },
   {
     name: "Email",
     href: "mailto:devansh18dp@gmail.com",
-    icon: <Mail />,
+    icon: Mail,
   },
 ];

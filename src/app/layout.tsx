@@ -4,6 +4,7 @@ import Navbar from "@/components/common/Navbar";
 import OnekoCat from "@/components/common/OnekoCat";
 import { Quote } from "@/components/common/Quote";
 import { ThemeProvider } from "@/components/common/ThemeProviders";
+import { Toaster } from "@/components/ui/sonner";
 import { generateMetadata as getMetadata } from "@/config/Meta";
 import ReactLenis from "lenis/react";
 import { ViewTransitions } from "next-view-transitions";
@@ -34,6 +35,7 @@ export default function RootLayout({
               <Quote />
               <Footer />
               <ChatBubble />
+              <Toaster />
             </ReactLenis>
           </ThemeProvider>
         </body>

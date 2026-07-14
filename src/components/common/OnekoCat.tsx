@@ -6,5 +6,5 @@ export default function OnekoCat() {
   if (!catConfig.enabled) {
     return null;
   }
-  return <Script src="./oneko/oneko.gif" data-cat="./oneko/oneko.gif" />;
+  return <Script src="/oneko/oneko.js" data-cat="/oneko/oneko.gif" />;
 }

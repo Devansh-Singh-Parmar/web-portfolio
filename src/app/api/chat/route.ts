@@ -140,6 +140,17 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = chatSchema.parse(body);
 
+    // After the two priming turns (user system prompt + model ack), the
+    // conversation must resume on a user turn. The client includes the
+    // assistant's opening greeting as a "model" turn, which would create two
+    // consecutive model turns and be rejected by Gemini. Drop any leading
+    // non-user turns so history always starts with a user message.
+    const firstUserIndex = validatedData.history.findIndex(
+      (msg) => msg.role === "user",
+    );
+    const conversationHistory =
+      firstUserIndex === -1 ? [] : validatedData.history.slice(firstUserIndex);
+
     // Prepare the request body for Gemini REST API
     const requestBody = {
       contents: [
@@ -154,7 +165,7 @@ export async function POST(request: NextRequest) {
           role: "model",
         },
         // Add conversation history
-        ...validatedData.history.map((msg) => ({
+        ...conversationHistory.map((msg) => ({
           ...msg,
           parts: msg.parts.map((part) => ({
             ...part,
@@ -175,7 +186,7 @@ export async function POST(request: NextRequest) {
       },
     };
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
 
     const response = await fetch(geminiUrl, {
       method: "POST",

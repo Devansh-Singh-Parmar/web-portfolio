@@ -1,9 +1,9 @@
 export const certificates = [
   {
-    file: "cert",
-    title: "I'll add certificates here",
-    issuer: "devansh",
-    date: "202ad",
+    file: "/project/placeholder.jpg",
+    title: "Sample Certificate",
+    issuer: "Issuer Name",
+    date: "2025-01-01",
   },
 ];
 

@@ -78,7 +78,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </Link>
             <div className="flex items-center gap-2">
               <Tooltip>
-                <TooltipTrigger>
+                <TooltipTrigger asChild>
                   <Link
                     className="text-secondary hover:text-primary flex size-6 items-center justify-center transition-colors"
                     href={project.link}
@@ -92,8 +92,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </TooltipContent>
               </Tooltip>
               <Tooltip>
-                <TooltipTrigger>
-                  {project.github && (
+                <TooltipTrigger asChild>
+                  {project.github ? (
                     <Link
                       className="text-secondary hover:text-primary flex size-6 items-center justify-center transition-colors"
                       href={project.github}
@@ -101,6 +101,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     >
                       <Github />
                     </Link>
+                  ) : (
+                    <span />
                   )}
                 </TooltipTrigger>
                 <TooltipContent>
@@ -120,7 +122,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((technology, index) => (
                 <Tooltip key={index}>
-                  <TooltipTrigger>
+                  <TooltipTrigger asChild>
                     <div className="size-6 transition-all duration-300 hover:scale-120 hover:cursor-pointer">
                       {technology.icon}
                     </div>

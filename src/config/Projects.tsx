@@ -21,8 +21,8 @@ export const projects: Project[] = [
     title: "Sample",
     description:
       "A sample project description that highlights the main features and technologies used in the project.",
-    image: "/project/proj1.png",
-    video: "youtube.com/sample",
+    image: "/project/placeholder.jpg",
+    video: "/project/place.mp4",
     link: "https://project.com",
     technologies: [
       { name: "Next.js", icon: <NextJs key="nextjs" /> },
@@ -44,8 +44,8 @@ export const projects: Project[] = [
     title: "Sample",
     description:
       "A sample project description that highlights the main features and technologies used in the project.",
-    image: "/project/proj1.png",
-    video: "youtube.com/sample",
+    image: "/project/placeholder.jpg",
+    video: "/project/place.mp4",
     link: "https://project.com",
     technologies: [
       { name: "Next.js", icon: <NextJs key="nextjs" /> },
@@ -60,15 +60,15 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj2",
     isWorking: true,
   },
   {
     title: "Sample",
     description:
       "A sample project description that highlights the main features and technologies used in the project.",
-    image: "/project/proj1.png",
-    video: "youtube.com/sample",
+    image: "/project/placeholder.jpg",
+    video: "/project/place.mp4",
     link: "https://project.com",
     technologies: [
       { name: "Next.js", icon: <NextJs key="nextjs" /> },
@@ -83,15 +83,15 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj3",
     isWorking: true,
   },
   {
     title: "Sample",
     description:
       "A sample project description that highlights the main features and technologies used in the project.",
-    image: "/project/proj1.png",
-    video: "youtube.com/sample",
+    image: "/project/placeholder.jpg",
+    video: "/project/place.mp4",
     link: "https://project.com",
     technologies: [
       { name: "Next.js", icon: <NextJs key="nextjs" /> },
@@ -106,15 +106,15 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj4",
     isWorking: true,
   },
   {
     title: "Sample",
     description:
       "A sample project description that highlights the main features and technologies used in the project.",
-    image: "/project/proj1.png",
-    video: "youtube.com/sample",
+    image: "/project/placeholder.jpg",
+    video: "/project/place.mp4",
     link: "https://project.com",
     technologies: [
       { name: "Next.js", icon: <NextJs key="nextjs" /> },
@@ -129,15 +129,15 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj5",
     isWorking: true,
   },
   {
     title: "Sample",
     description:
       "A sample project description that highlights the main features and technologies used in the project.",
-    image: "/project/proj1.png",
-    video: "youtube.com/sample",
+    image: "/project/placeholder.jpg",
+    video: "/project/place.mp4",
     link: "https://project.com",
     technologies: [
       { name: "Next.js", icon: <NextJs key="nextjs" /> },
@@ -152,7 +152,7 @@ export const projects: Project[] = [
     github: "https://github.com/example",
     live: "https://example.com",
     details: true,
-    projectDetailsPageSlug: "/projects/proj1",
+    projectDetailsPageSlug: "/projects/proj6",
     isWorking: true,
   },
 ];

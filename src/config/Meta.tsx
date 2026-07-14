@@ -52,7 +52,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     title: "Contact",
     description: "Get in touch with me!",
     keywords: ["contact", "hire", "collaboration", "developer"],
-    ogImage: "/assests/logo.jpeg",
+    ogImage: "/assets/logo.jpeg",
     twitterCard: "summary",
   },
   "/work-experience": {

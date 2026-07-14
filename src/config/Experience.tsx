@@ -45,7 +45,7 @@ export const experiences: Experience[] = [
     company: "McDonalds",
     position: "Yapper",
     location: "Remote",
-    image: "/experience/mcdonalds.png",
+    image: "/company/pizzahut.jpg",
     description: [
       "I Yapped there lorem",
       "Enhanced user experience and interface design through implementation of consistent design systems, accessibility standards, and performance optimizations.",
@@ -98,7 +98,7 @@ export const experiences: Experience[] = [
     company: "PizzaHut",
     position: "Yapper",
     location: "Remote",
-    image: "/experience/pizzahut.png",
+    image: "/company/pizzahut.jpg",
     description: [
       "I Yapped there lorem",
       "Enhanced user experience and interface design through implementation of consistent design systems, accessibility standards, and performance optimizations.",
@@ -142,7 +142,7 @@ export const experiences: Experience[] = [
     company: "PizzaHut",
     position: "Yapper",
     location: "Remote",
-    image: "/experience/pizzahut.png",
+    image: "/company/pizzahut.jpg",
     description: [
       "I Yapped there lorem",
       "Enhanced user experience and interface design through implementation of consistent design systems, accessibility standards, and performance optimizations.",
@@ -186,7 +186,7 @@ export const experiences: Experience[] = [
     company: "PizzaHut",
     position: "Yapper",
     location: "Remote",
-    image: "/experience/pizzahut.png",
+    image: "/company/pizzahut.jpg",
     description: [
       "I Yapped there lorem",
       "Enhanced user experience and interface design through implementation of consistent design systems, accessibility standards, and performance optimizations.",
@@ -230,7 +230,7 @@ export const experiences: Experience[] = [
     company: "PizzaHut",
     position: "Yapper",
     location: "Remote",
-    image: "/experience/pizzahut.png",
+    image: "/company/pizzahut.jpg",
     description: [
       "I Yapped there lorem",
       "Enhanced user experience and interface design through implementation of consistent design systems, accessibility standards, and performance optimizations.",
