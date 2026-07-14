@@ -59,14 +59,18 @@ export const heroConfig = {
     {
       variant: "outline",
       text: "Resume / CV",
-      href: "/resume",
+      href: "/resume.pdf",
       icon: "CV",
+      external: true,
+
     },
     {
       variant: "default",
       text: "Get in touch",
       href: "/contact",
       icon: "Chat",
+      external: false,
+
     },
   ],
 };
