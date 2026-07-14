@@ -4,6 +4,11 @@ This is a portfolio with a cute oreko, made it for myself.
 
 You can browse multiple pages inside the application itself, has a contact form, personal assistant and a lot more!
 
+<img width="1280" height="793" alt="image" src="https://github.com/user-attachments/assets/c46e248f-96ea-4b17-aa05-c0d27470ae66" />
+
+
+https://web-portfolio-ten-zeta.vercel.app/
+
 ## Run Locally
 
 Clone the project
