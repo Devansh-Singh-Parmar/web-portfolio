@@ -3,6 +3,6 @@ export const ctaConfig = {
   profileAlt: "Profile",
 
   linkText: "Book a Free Call",
-  calLink: "https://calendly.com/devansh-1/30min",
+  calLink: "https://calendly.com/wakerey/30min",
   preText: "Thank you, let's talk!",
 };

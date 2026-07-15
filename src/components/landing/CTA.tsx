@@ -2,9 +2,9 @@
 
 import { ctaConfig } from "@/config/CTA";
 import { useHapticFeedback } from "@/hooks/use-haptic-feedback";
-import Cal, { getCalApi } from "@calcom/embed-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { InlineWidget } from "react-calendly";
 
 import Container from "../common/Container";
 import {
@@ -32,25 +32,6 @@ export default function CTA({
 }: CallToActionProps) {
   const { triggerHaptic, isMobile } = useHapticFeedback();
   const [showCalPopup, setShowCalPopup] = useState(false);
-
-  useEffect(() => {
-    const cal = async () => {
-      try {
-        const calApi = await getCalApi();
-        if (calApi) {
-          calApi("on", {
-            action: "bookingSuccessful",
-            callback: () => {
-              setShowCalPopup(false);
-            },
-          });
-        }
-      } catch (error) {
-        console.error("Failed to intialize Cal API:", error);
-      }
-    };
-    cal();
-  }, []);
 
   const handleButtonClick = () => {
     if (isMobile()) {
@@ -120,15 +101,13 @@ export default function CTA({
           </DialogHeader>
 
           <div className="max-h-[calc(90vh-220px)] overflow-y-auto rounded-lg">
-            <Cal
-              calLink={calLink}
-              config={{
-                name: "Portfolio Visitor",
-                email: "",
-                notes: "Booked from portfolio website",
-              }}
-              className="h-[500px] w-full rounded-lg"
-            />
+            {showCalPopup && (
+              <InlineWidget
+                url={calLink}
+                styles={{ height: "500px", width: "100%" }}
+                pageSettings={{ hideEventTypeDetails: false }}
+              />
+            )}
           </div>
         </DialogContent>
       </Dialog>
